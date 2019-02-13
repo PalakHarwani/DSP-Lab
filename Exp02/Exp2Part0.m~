@@ -3,7 +3,7 @@ clc
 clear all
 close all
 
-N = 512; %Number of samples 
+N = 8; %Number of samples 
 n = 1:1:N;
 wc = 0.3*pi;
 k = (N-1)/2;
@@ -38,7 +38,7 @@ plot(w/pi,hf_abs1);
 title("windowed LPF");
 xlabel('Normalized Frequency (\times\pi rad/sample)')
 ylabel('Magnitude (dB)')
-print(gcf,'rectangular_64.png','-dpng','-r300');
+print(gcf,'rectangular_8.png','-dpng','-r300');
 
 %%%%%%%%%%%%triangular window%%%%%%%%%%%%%%%%%%%%%%%
 figure;
@@ -64,7 +64,7 @@ plot(w/pi,hf_abs2);
 title("windowed LPF");
 xlabel('Normalized Frequency (\times\pi rad/sample)')
 ylabel('Magnitude (dB)')
-print(gcf,'triangular_64.png','-dpng','-r300');
+print(gcf,'triangular_8.png','-dpng','-r300');
 
 %%%%%%%%%%%%hanning window%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -91,7 +91,7 @@ plot(w/pi,hf_abs3);
 title("windowed LPF");
 xlabel('Normalized Frequency (\times\pi rad/sample)')
 ylabel('Magnitude (dB)')
-print(gcf,'hanning_64.png','-dpng','-r300');
+print(gcf,'hanning_8.png','-dpng','-r300');
 
 %%%%%%%%%%%%hamming window%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -118,7 +118,7 @@ plot(w/pi,hf_abs4);
 title("windowed LPF");
 xlabel('Normalized Frequency (\times\pi rad/sample)')
 ylabel('Magnitude (dB)')
-print(gcf,'hamming_64.png','-dpng','-r300');
+print(gcf,'hamming_8.png','-dpng','-r300');
 
 
 %%%%%%%%%%%%blackmann window%%%%%%%%%%%%%%%%%%%%%%%
@@ -146,7 +146,7 @@ plot(w/pi,hf_abs5);
 title("windowed LPF");
 xlabel('Normalized Frequency (\times\pi rad/sample)')
 ylabel('Magnitude (dB)')
-print(gcf,'blackmann_64.png','-dpng','-r300');
+print(gcf,'blackmann_512.png','-dpng','-r300');
 
 
 

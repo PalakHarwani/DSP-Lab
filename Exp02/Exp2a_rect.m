@@ -29,9 +29,10 @@ subplot(4,2,4);
 plot(f,x1_noise);
 title('FFT of original signal with noise');
 
+snr(x,noise)
 
-N = 512; %Number of samples 
-n = 1:1:N;
+N = 8; %Number of samples 
+n = 1:1:N;  
 wc = 0.3*pi;
 k = (N-1)/2;
 hd = zeros(1,N);
@@ -71,6 +72,9 @@ subplot(4,2,8);
 plot(f,y1_noise_rec);
 title('FFT of filtered signal with noise');
 axis([-0.3 0.3 0 1500])
+print(gcf,'rectangular.png','-dpng','-r300');
+y_noise = y_noise_rec - y_rec;
+snr(y_noise_rec, y_noise)
 
 %%%%%%%%%%%%triangular window%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure('Name', 'Triangular window');
@@ -119,6 +123,9 @@ subplot(4,2,8);
 plot(f,y1_noise_tri);
 title('FFT of filtered signal with noise');
 axis([-0.3 0.3 0 1500])
+print(gcf,'triangular.png','-dpng','-r300');
+y_noise = y_noise_tri - y_tri;
+snr(y_noise_tri, y_noise)
 
 %%%%%%%%%%%%hanning window%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -168,6 +175,9 @@ subplot(4,2,8);
 plot(f,y1_noise_hann);
 title('FFT of filtered signal with noise');
 axis([-0.3 0.3 0 1500])
+print(gcf,'hanning.png','-dpng','-r300');
+y_noise = y_noise_hann - y_hann;
+snr(y_noise_hann, y_noise)
 
 %%%%%%%%%%%%hamming window%%%%%%%%%%%%%%%%%%%%%%%
 figure('Name', 'Hamming');
@@ -215,8 +225,11 @@ subplot(4,2,8);
 plot(f,y1_noise_hamm);
 title('FFT of filtered signal with noise');
 axis([-0.3 0.3 0 1500])
+print(gcf,'hamming.png','-dpng','-r300');
+y_noise = y_noise_hamm - y_hamm;
+snr(y_noise_hamm, y_noise)
 
-%%%%%%%%%%%%blackmann window%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%blackmann window%%%%%%%%%%%%%%%
 figure('Name', 'Blackmann');
 subplot(4,2,1);
 plot(t,x);
@@ -262,3 +275,6 @@ subplot(4,2,8);
 plot(f,y1_noise_bm);
 title('FFT of filtered signal with noise');
 axis([-0.3 0.3 0 1500])
+print(gcf,'blackmann.png','-dpng','-r300');
+y_noise = y_noise_bm - y_bm;
+snr(y_noise_bm, y_noise)
