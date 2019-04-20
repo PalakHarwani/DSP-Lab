@@ -1,4 +1,4 @@
-%%%%%%%%%Exp03b%%%%%%%%%%
+%%%%%%%%%Exp03c%%%%%%%%%%
 clc
 clear all
 close all

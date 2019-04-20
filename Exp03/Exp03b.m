@@ -16,7 +16,7 @@ Y = fftshift(abs(fft(data,nf)));
 subplot(2,2,1);
 plot(f,Y);
 title('FFT of data');
-
+xlabel('Frequency');ylabel('|X(f)|/N');
 
 
 [b1,a1] = butter(3,[0.01 0.08],'bandpass');
@@ -30,7 +30,8 @@ plot(f,Y1);
 xlabel('frequency');
 ylabel('X(f)');
 title('FFT of delta 0.5 to 4Hz');
-
+xlabel('Frequency');
+ylabel('|X(f)|/N');
 
 [b2,a2] = butter(3,[0.08 0.16],'bandpass');
 y2 = filter(b2,a2,data);
@@ -55,4 +56,7 @@ plot(f,Y3);
 xlabel('frequency');
 ylabel('X(f)');
 title('FFT of alpha 8 to 13Hz');
+xlabel('Frequency');
+ylabel('|X(f)|/N');
 
+print(gcf,'03b.png','-dpng','-r300');
